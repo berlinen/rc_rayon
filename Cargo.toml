@@ -9,9 +9,12 @@ keywords = ["parallel", "thread", "concurrency", "join", "performance"]
 categories = ["concurrency"]
 
 [workspace]
-members = ["rayon-demo", "rayon-core", "rayon"]
+members = ["rayon-demo", "rayon-core"]
 exclude = ["ci"]
 
+[dependencies]
+rayon-core = { version = "0.1.0", path = "rayon-core" }
+wasm_sync = { version = "0.1.0", optional = true }
 
 [dependencies.either]
 version = "1.0"
