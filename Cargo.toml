@@ -2,7 +2,22 @@
 name = "rc_rayon"
 version = "0.1.0"
 edition = "2021"
+description = "A simple ray tracer written in Rust"
+repository = "https://github.com/berlinen/rc_rayon.git"
+readme = "README.md"
+keywords = ["parallel", "thread", "concurrency", "join", "performance"]
+categories = ["concurrency"]
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[workspace]
+members = ["rayon-demo", "rayon-core", "rayon"]
+exclude = ["ci"]
 
-[dependencies]
+
+[dependencies.either]
+version = "1.0"
+default-features = false
+
+
+[dev-dependencies]
+rand = "0.8"
+rand_xorshift = "0.3"
