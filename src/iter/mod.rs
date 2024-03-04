@@ -1,3 +1,6 @@
+use self::plumbing::*;
+pub mod plumbing;
+
 pub trait ParallelIterator: Sized + Send {
     type Item: Send;
 
