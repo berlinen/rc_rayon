@@ -5,3 +5,5 @@ mod delegate;
 mod private;
 
 mod split_producer;
+
+mod iter;
