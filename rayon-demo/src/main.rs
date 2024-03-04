@@ -5,6 +5,8 @@ use std::{env, io, io::prelude::*, process::exit};
 
 mod cpu_time;
 
+mod life;
+
 fn main() {
     println!("Hello, world!");
 }

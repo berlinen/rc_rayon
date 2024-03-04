@@ -6,9 +6,9 @@ use libc::{getrusage, RUSAGE_SELF};
 // 这个类型的主要优点是它不会自动调用 T 的析构函数，这意味着你可以安全地覆盖 MaybeUninit<T> 包含的数据，而不需要担心未初始化的数据被错误地释放。
 use std::mem::MaybeUninit;
 
-pub fn get_cpu_time() -> Opition<u64> {
-    let useage = unsafe {
-        let mut usage: MaybeUninit::uninit();
+pub fn get_cpu_time() -> Option<u64> {
+    let usage = unsafe {
+        let mut usage = MaybeUninit::uninit();
         // getrusage 函数，将 RUSAGE_SELF 和 usage 的可变指针作为参数。
         // RUSAGE_SELF 是一个常量，表示我们想要获取当前进程的资源使用信息。u
         // sage.as_mut_ptr() 是获取 usage 的可变指针，这样 getrusage 函数就可以将结果写入这块内存。
